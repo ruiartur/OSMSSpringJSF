@@ -1,0 +1,48 @@
+@CHARSET "ISO-8859-1";
+
+
+
+h1.h11 { 
+color:white;  
+font-family:Tahoma; 
+font-size:26px; 
+	}
+	
+table.tabela1{
+border:0;
+
+}
+	
+td.td1 {
+border:0; 
+height:75 ;
+width:450 ;
+background-color:#9D261D;
+
+}
+
+td.td2{
+
+border:0 ; 
+height:525; 
+background-color:#AEB8C6;
+}
+
+table.tabela2{
+border: 0;
+height:;
+width:;
+
+}
+
+td.td3{
+width:450 ;
+
+}
+
+input.edit{
+border: 2px inset;
+background-color: #D3D3D3;
+
+
+}

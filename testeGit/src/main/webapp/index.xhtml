@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:bms="http://java.sun.com/jsf/composite/osms"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:metadata>
+	<f:viewParam name="categoryName" value="#{showCategory.categoryName}" />
+</f:metadata>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" type="text/css" href="/osms/loja/es2.css" />
+<link rel="stylesheet" type="text/css"
+	href="/osms/loja/boottest/css/bootstrap.css" />
+</head>
+
+
+<body>
+ <ui:composition template="/templateCliente.xhtml">
+	<ui:define name="menu">
+	</ui:define>
+	<ui:define name="content">
+	
+	      <h1 style="color: #D2151C;">Últimas ofertas  </h1>
+	      <hr/>
+			<h:form>
+					<ui:repeat value="#{showCategory.productsIndex}" var="prod">
+						<div style="float: left; height: 300 px">
+							<div style="width: 200px">
+								<div align="center" style="height: 200px">
+									<a
+										href="/osms/faces/showProduct.xhtml?productName=#{prod.name}"><img
+										src=" #{prod.urlimage}" width="150px" /></a>
+									<h3>
+										<a
+											href="/osms/faces/showProduct.xhtml?productName=#{prod.name}">
+											#{prod.name}</a>
+									</h3>
+									<div style="float: center">
+										<h4 style="font-family: Tahoma; color:#3B5998;">#{prod.priceFormat}</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</ui:repeat>
+					<div style="clear: both;"></div>
+				
+				
+					
+				</h:form>
+	
+	</ui:define>
+	
+	</ui:composition>
+</body>
+</html>

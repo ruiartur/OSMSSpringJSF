@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:bms="http://java.sun.com/jsf/composite/osms"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" type="text/css" href="/osms/loja/es2.css" />
+<link rel="stylesheet" type="text/css"
+	href="/osms/loja/boottest/css/bootstrap.css" />
+</head>
+
+
+<body>
+
+<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<ul class="nav">
+				    <li><h3>Loja Virtual - 	Área Administrativa  </h3> </li>
+				</ul>
+				<div style="float: right;">
+				<a href="/osms/" class="btn btn-danger"><i class="icon-user icon-white"/> log-out </a>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      	<span class="label label-inverse"> <i class="icon-folder-open icon-white"/> &nbsp; Area do Administrador </span>
+      	<h:form>
+	<ul class="nav nav-list">
+	<li class="nav-header">
+	Categorias
+	</li>
+	<li>
+	<a href="/osms/faces/loja/categorias.xhtml"><b>Cadastro de categorias</b></a></li>
+	<li><a href="/osms/faces/loja/searchCategorias.xhtml"><b>Busca
+		categorias</b></a>
+	</li>
+		<li class="nav-header">
+	Produtos
+	</li>
+	<li><h:commandLink action="#{newProduct.initialize}"><b>Cadastro de Produtos</b></h:commandLink>
+	</li>
+	<li>
+	<h:commandLink action="#{searchProduct.initialize}"><b>Busca de Produtos</b></h:commandLink> </li>
+  </ul>
+  </h:form>
+    </div>
+    <div class="span8">
+    
+        
+      	<ui:insert name="content">
+    				
+    				
+    				</ui:insert>
+    			
+    </div>
+  </div>
+</div>
+
+
+
+    				
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:composite="http://java.sun.com/jsf/composite"
+    xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<composite:interface>
+	<composite:attribute name="osms"> </composite:attribute>
+	<composite:facet name="comands"> </composite:facet>
+	<composite:attribute name="caption"> </composite:attribute>
+	<composite:attribute name="disabled"> </composite:attribute>
+	</composite:interface>
+	
+	<composite:implementation>
+	<h:form>
+	 
+  <fieldset style="background-color: #E6E6E6; border-width: 2px; border-style: solid; border-color: black; margin: 20px 0px 20px 0px;
+  display: block; position: relative; padding: 0px 10px 10px 10px;">
+  <legend style="background-color: #555555; border-width: 1px; border-style: solid; border-color:#7c5b47;
+  color:white; font-weight:bold; padding:2px 5px; margin:0px 0px 10px 0px; position:relative; top: -12px;">#{cc.attrs.caption}</legend>
+  
+    <div style="float: left; width: 350px">
+  <label style="display:block; float:left; width:100px; text-align:right; margin:6px 5px 0px 0px; font-weight:bold;">Nome :</label>
+<h:inputText value="#{cc.attrs.osms.name}" disabled="#{cc.attrs.disabled}" > </h:inputText>
+  </div>
+  
+    <div style="float: left; width: 350px">
+  <label style="display:block; float:left; width:100px; text-align:right; margin:6px 5px 0px 0px;font-weight:bold;">Descrição :</label>
+  <h:inputTextarea rows="5" value="#{cc.attrs.osms.description}" disabled="#{cc.attrs.disabled}" />
+  </div>
+  
+  <div style="clear: both;"></div>
+    <div style="float: left; width: 350px">
+  <composite:renderFacet name="comands"></composite:renderFacet>
+  </div>
+  
+  
+  
+  </fieldset>
+	
+	  <h:messages align="center" style="font-size:25px; font-family: Tahoma; " ></h:messages>
+	
+	
+	
+	</h:form>
+	
+	
+	</composite:implementation>
+
+
+
+
+
+
+
+
+
+</html>

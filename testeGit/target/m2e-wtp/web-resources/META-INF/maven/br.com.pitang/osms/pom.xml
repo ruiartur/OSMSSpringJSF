@@ -1,0 +1,141 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.com.pitang</groupId>
+	<artifactId>osms</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>osms</name>
+	<url>http://maven.apache.org</url>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.faces</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.2.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.1.2.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901.jdbc4</version>
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>info.cinematica</groupId> -->
+<!-- 			<artifactId>framework-tomcat</artifactId> -->
+<!-- 			<version>0.0.1-SNAPSHOT</version> -->
+<!-- 		</dependency> -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+  			<artifactId>commons-lang3</artifactId>
+  			<version>3.1</version>
+		</dependency>
+		
+		<dependency>
+
+  			<groupId>org.springframework</groupId>
+ 
+  			<artifactId>spring-context</artifactId>
+
+  			<version>3.1.0.RELEASE</version>
+ 
+		</dependency>
+
+		
+
+		 <dependency>
+ 
+  			<groupId>org.springframework</groupId>
+
+  			<artifactId>spring-tx</artifactId>
+ 
+  			<version>3.1.0.RELEASE</version>
+
+  		</dependency>		
+ 
+		
+
+		<dependency>
+
+  			<groupId>org.springframework</groupId>
+ 
+  			<artifactId>spring-web</artifactId>
+
+  			<version>3.1.0.RELEASE</version>
+ 
+		</dependency>				
+
+		
+ 
+		<dependency>
+
+  			<groupId>org.springframework</groupId>
+
+   			<artifactId>spring-orm</artifactId>
+
+  			<version>3.1.0.RELEASE</version>
+ 
+		</dependency>
+		
+		<dependency>
+			<groupId>com.jolbox</groupId>
+			<artifactId>bonecp</artifactId>
+			<version>0.7.1.RELEASE</version>
+		</dependency>	
+		
+			<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+	
+	<outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
+	
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

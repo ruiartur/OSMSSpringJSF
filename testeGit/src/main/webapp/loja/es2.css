@@ -1,0 +1,43 @@
+
+@CHARSET "ISO-8859-1";
+
+
+table.tab1{
+	
+	border:1;
+	border-color:#0055CC;
+}
+
+
+td.td1 {
+border:2; ;
+background-color:#0055CC;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+
+}
+
+h1.h11 { 
+color:white;  
+font-family:Arial; 
+font-size:26px; 
+	}
+	
+	
+	
+td.td2 {
+border:2; 
+background-color:#0055CC;
+
+}
+
+div.div1{
+	overflow: auto; 
+	height: 400px;
+	width: 650px;
+	
+	
+	
+}
+

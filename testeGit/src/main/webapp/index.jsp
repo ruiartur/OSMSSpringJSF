@@ -1,0 +1,1 @@
+<% response.sendRedirect("/osms/faces/index.xhtml"); %>

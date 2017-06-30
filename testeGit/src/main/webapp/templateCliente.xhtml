@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:bms="http://java.sun.com/jsf/composite/osms"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" type="text/css" href="/osms/loja/es2.css" />
+<link rel="stylesheet" type="text/css"
+	href="/osms/loja/boottest/css/bootstrap.css" />
+</head>
+
+
+<body>
+ <div style="height: 174px; background-image:url('/osms/loja/banner.png');">  
+  <h:link  style="float: right; margin-top: 137px; width: 200px;" outcome="shoppingCart"><h3>
+  <img src="/osms/loja/shopping-cart-hi.png" style="width: 30px "/>&nbsp; Meu Carrinho</h3></h:link>
+  </div>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<ul class="nav">
+					<li><h3 >Loja Virtual</h3></li>
+					<ui:repeat var="cat" value="#{showCategory.cats2}">
+						<li><a
+							href="/osms/faces/showCategory.xhtml?categoryName=#{cat.name}">#{cat.name}</a></li>
+					</ui:repeat>
+					</ul>			 
+					<div class="nav pull-right">
+					<h:form class="nav pull-rigth">
+  							<div class="input-append">
+								<h:inputText style="margin-bottom: -8px" value="#{showCategory.name}" class="span2" id="appendedInputButton" size="16" type="text"/>
+								<h:commandLink class="btn btn-danger" action="#{showCategory.searchProduct(showCategory.name)}" ><i class="icon-search icon-white"></i></h:commandLink>
+							</div>
+							</h:form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+    
+	<div class="container-fluid">
+		<div class="row-fluid" > 
+			<div class="span2">
+			   
+			   <ul class="nav nav-list" >
+			   <ui:repeat var="cat" value="#{showCategory.cats2}">
+						<li class="nav-header">#{cat.name}</li>
+						<li> <ui:repeat value="#{cat.product}" var="prod">
+						
+						<a href="/osms/faces/showProduct.xhtml?productName=#{prod.name}">#{prod.name}</a> </ui:repeat> </li>
+					</ui:repeat>
+							  
+			   
+			   </ul>
+			
+                   	<ui:insert name="menu">
+    				
+    				
+    				</ui:insert>
+
+
+			</div>
+			<div class="span8">
+               	<ui:insert name="content">
+    				
+    				
+    				</ui:insert>
+
+
+
+			</div>
+		</div>
+	</div>
+    
+
+
+
+    				
+
+</body>
+</html>

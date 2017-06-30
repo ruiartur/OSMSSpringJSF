@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Pesquisa de categorias</title>
+<link rel="stylesheet" type="text/css" href="/osms/loja/es2.css" />
+<!--<link rel="stylesheet" type="text/css" href="/osms/loja/estilo.css"/>-->
+<link rel="stylesheet" type="text/css"
+	href="/osms/loja/boottest/css/bootstrap.css" />
+</head>
+
+
+
+<body>
+	<ui:composition template="../template.xhtml">
+		<ui:define name="content">
+
+			<h:form>
+
+				<fieldset
+					style="background-color: #E6E6E6; border-width: 2px; border-style: solid; border-color: black; margin: 20px 0px 20px 0px; display: block; position: relative; padding: 0px 10px 10px 10px;">
+					<legend
+						style="background-color: #555555; border-width: 1px; border-style: solid; border-color: #7c5b47; color: white; font-weight: bold; padding: 2px 5px; margin: 0px 0px 10px 0px; position: relative; top: -12px;">Pesquisa de Categorias</legend>
+
+					<div style="float: left; width: 350px">
+						<label
+							style="display: block; float: left; width: 100px; text-align: right; margin: 6px 5px 0px 0px; font-weight: bold;">Nome
+							:</label>
+						<h:inputText value="#{searchCategory.options.name}">
+													</h:inputText>
+					</div>
+
+					<div style="float: left; width: 350px">
+						<label
+							style="display: block; float: left; width: 100px; text-align: right; 
+							margin: 6px 5px 0px 0px; font-weight: bold;">Descrição
+							:</label>
+						<h:inputTextarea rows="5" value="#{searchCategory.options.description}" /></div>
+
+					<div style="clear: both;"></div>
+					<div style="float: left; width: 350px">
+						<h:commandButton class="btn btn-primary"
+							action="#{searchCategory.searchCategory}" value="Pesquisar"></h:commandButton>
+
+
+					</div>
+
+
+
+				</fieldset>
+
+				<h:messages align="center"
+					style="font-size:25px; font-family: Tahoma; "></h:messages>
+                 
+                 <h:dataTable class="table" value="#{searchCategory.categorias}" var="cate">
+											<h:column>
+												<f:facet name="header"> Nome </f:facet>
+												<h:commandLink action="#{searchCategory.editCategory(cate)}"> #{cate.name}</h:commandLink>
+											</h:column>
+											<h:column>
+												<f:facet name="header"> &nbsp;&nbsp; Descrição </f:facet>&nbsp; &nbsp;&nbsp; #{cate.description}</h:column>
+											<h:column>
+												&nbsp;&nbsp; <h:commandLink  class="icon-trash" action="#{searchCategory.deleteCategory(cate)}">
+													
+												</h:commandLink>
+											</h:column>
+										</h:dataTable>
+										<div class="pagination" align="center">
+			  								<ul>
+			  									<ui:repeat var="page" value="#{searchCategory.pages}">
+    												<li><h:commandLink class="btn btn-primary" action="#{searchCategory.goToPage(page)}"  value="#{page}"/></li>
+    										 </ui:repeat>
+  												</ul>
+										</div>
+
+
+			</h:form>
+
+
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

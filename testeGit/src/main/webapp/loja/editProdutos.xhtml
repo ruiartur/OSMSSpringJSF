@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:produto="http://java.sun.com/jsf/composite/osms"
+	>
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastro de Produtos</title>
+<link rel="stylesheet" type="text/css" href="/osms/loja/es2.css" />
+<link rel="stylesheet" type="text/css"
+	href="/osms/loja/boottest/css/bootstrap.css" />
+</head>
+
+
+<body>
+	
+<ui:composition template="../template.xhtml">
+	<ui:define name="content">
+	 <produto:produtoModelo  prod="#{searchProduct.panel}" caption="Edição de Produtos"  disabled="#{searchProduct.prosaved}">
+	 <f:facet name="comands">
+	 
+			<h:commandButton class="btn btn-primary"
+				action="#{searchProduct.registerProduct}" value="Salvar"
+				disabled="#{searchProduct.prosaved or searchProduct.panel.product==null}"></h:commandButton>
+												&nbsp; <h:button class="btn btn-primary"
+				outcome="searchProduct" value="Cancel"
+				rendered="#{searchProduct.prosaved==false}" />
+													&nbsp;
+													<h:commandButton class="btn btn-primary"
+				action="#{searchProduct.initialize}" value="Voltar"
+				rendered="#{searchProduct.prosaved}"></h:commandButton>
+
+	 
+	 </f:facet>
+	 
+	 </produto:produtoModelo>
+	
+     </ui:define>
+</ui:composition>
+
+</body>
+</html>

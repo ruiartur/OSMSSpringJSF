@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:bms="http://java.sun.com/jsf/composite/osms"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:metadata>
+	<f:viewParam name="productName" value="#{showProduct.productName}" />
+</f:metadata>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" type="text/css" href="/osms/loja/es2.css" />
+<link rel="stylesheet" type="text/css"
+	href="/osms/loja/boottest/css/bootstrap.css" />
+</head>
+
+
+<body>
+
+<ui:composition template="/templateCliente.xhtml">
+	<ui:define name="menu">
+	</ui:define>
+	<ui:define name="content">
+							<fieldset>
+					<legend style="font-size: 28px;  font-weight:bold;">#{showProduct.product.name}</legend>
+    
+
+					<img src="	#{showProduct.product.urlimage}"
+						width="250px" style="float: left;" />
+						
+							<div style= "float: left; margin-left: 150px; margin-top: 75px">
+						<label style="font-size: 20px"> Por apenas </label><p style="font-size: 18px; font-weight:bold; color:#3B5998;"> #{showProduct.product.priceFormat}</p>
+					</div>
+					
+					<div style= "float: left; margin-left: 150px; margin-top: 75px">
+					<h:form>
+					
+					<h:commandLink  action="#{shoppingCart.addProduct(showProduct.product)}"><img src="/osms/loja/buy-icon.png" width="60px"/></h:commandLink>
+					</h:form>
+					</div>
+					<div style="clear: both;"></div>
+						
+					<div style= "float: left; margin-left: 5px; margin-top: 25px">
+						<label style="font-size: 22px">Informações do produto :</label>
+						<br></br>
+						<h:outputText value=" #{showProduct.product.descricao}"
+									  converter="descriptionContentConverter"
+									  escape="false">
+						
+						</h:outputText>
+						
+					</div>
+					
+					<div style="clear: both;"></div>
+						
+					<div style= "float: left; margin-left: 5px; margin-top: 25px">
+						<label style="font-size: 22px">Especificações técnicas :</label>
+						<br></br>
+						<div>
+						<div style="font-size: 18px; font-weight: bold;float: left;" > Peso :</div> 
+						
+						<div style="margin-left: 175px; margin-top font-size: 14px;font-weight: bold;">#{showProduct.product.peso} kg</div>
+						</div>
+						
+						<div style="font-size: 18px; font-weight: bold;float: left;" > Altura :</div> 
+						
+						<div style="margin-left: 175px; font-size: 14px;font-weight: bold;">#{showProduct.product.altura} cm</div>
+						
+						<div style="font-size: 18px; font-weight: bold;float: left;" > Largura :</div> 
+						
+						<div style="margin-left: 175px; font-size: 14px;font-weight: bold;">#{showProduct.product.largura} cm</div>
+						
+						
+						
+						<div style="font-size: 18px; font-weight: bold;float: left;" > Comprimento :</div> 
+						
+						<div style="margin-left: 175px; font-size: 14px;font-weight: bold;">#{showProduct.product.comprimento} cm</div>
+				        </div>   
+					
+			
+					
+				
+				</fieldset>
+				<br/>
+				<br/>
+				<a class="btn btn-primary" href="/osms/faces/showCategory.xhtml?categoryName=#{showProduct.product.category.name}"><i class="icon-arrow-left icon-white"/> Back </a>
+	
+	</ui:define>
+	
+	</ui:composition>
+
+
+</body>
+</html>
